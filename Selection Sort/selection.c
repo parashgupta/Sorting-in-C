@@ -2,20 +2,19 @@
 void display(int x[],int n);   //left to right
 void show(int x[],int n)
 {
-	int i,j,max,t;
-	for(i=n;i>0;i--)
+	for(int i=0;i<n-1;i++)
 	{
-		max =i;
-		for(j=i-1;j>=0;j--)
+		int min = i;
+		for(int j=i+1;j<n;j++)
 		{
-			if(x[max]<x[j])
-				max=j;
+			if(x[min]>x[j])
+			  min=j;
 		}
-	if(i!=max)
+	if(i!=min)
 	{
-		t=x[i];
-		x[i]= x[max];
-		x[max]=t;
+		int t=x[i];
+		x[i]= x[min];
+		x[min]=t;
 		display(x,8);
 	}
 	}
