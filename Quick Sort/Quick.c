@@ -5,7 +5,6 @@ void QuickSort(int x[],int si,int n);
 
 int x[] = {35,33,42,10,14,19,27,44,26,31}; //10 element in array
 int n=9;	
-static int c=0;
 
 int show(int x[],int i,int n)
 {
@@ -15,7 +14,7 @@ int show(int x[],int i,int n)
 
 	for(;i<n;i++)
 	{
-		if(x[i]>pi)
+		if(x[i]<pi)
 		{
 			t=x[i];
 			x[i]=x[p];
@@ -38,7 +37,7 @@ void QuickSort(int x[],int si,int n)
 	QuickSort(x,p+1,n);
 }
 
-void showAll()
+void display()
 {
 	int i;
 	for(i=0;i<=n;i++)
@@ -50,7 +49,7 @@ void showAll()
 
 void main()
 {
-	showAll();
+	display();
 	QuickSort(x,0,n);
-	printf("%d\t",c);
+	display();
 }
